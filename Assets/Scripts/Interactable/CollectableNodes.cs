@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class CollectableNodes : MonoBehaviour
 {
+    #region Variable
+    int m_points;
+    
+    
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
-        
+          
     }
 
     // Update is called once per frame
@@ -15,4 +21,11 @@ public class CollectableNodes : MonoBehaviour
     {
         
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+       
+    }
+
 }
