@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region Stats Variable
-
+    [SerializeField]
     int m_life;
-    int m_score;
+    [SerializeField]
+    public int m_score;
+    [SerializeField]
     int m_highScore;
 
     #endregion
@@ -25,15 +27,15 @@ public class PlayerController : MonoBehaviour
 
     #region Singleton
     //Instace
-    public static PlayerController m_instance { get; private set; }
+    public static PlayerController m_instance = null;
 
     //Manage the singleton lifecycle
-    protected virtual void Awake()
+     protected void Awake()
     {
-        if (!m_instance)
-        {
+        if (m_instance == null)
             m_instance = this;
-        }
+        else if (m_instance != this)
+            Destroy(this);
     }
             #endregion
 
