@@ -7,14 +7,18 @@ using UnityEngine.Audio;
 public class AudioClass 
 {
     #region Variable
-    string m_audioName;
+    public string m_audioName;
 
-    AudioClip m_audioClip;
+    public AudioClip m_audioClip;
+
+   
 
     [Range(0f, 1f)]
-    float m_volume;
+    public float m_volume;
 
-    [HideInInspector]
-    AudioSource m_audioSource;
+    [SerializeField]
+    public AudioSource m_audioSource;
     #endregion
+
+    
 }

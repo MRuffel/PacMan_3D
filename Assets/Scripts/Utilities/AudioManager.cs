@@ -6,13 +6,13 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField]
-     AudioClass[] m_sounds;
+    AudioClass[] m_sounds;
 
     //Instance
     public static AudioManager m_instance = null;
 
     void Awake() {
-
+  
         #region Singleton
         //Manage the singleton lifecycle
 
@@ -22,17 +22,20 @@ public class AudioManager : MonoBehaviour
                 Destroy(this);
         #endregion
 
-        foreach (Sound m_sound in m_sounds) {
+        foreach (AudioClass m_sound in m_sounds) {
 
-            m_sounds.m_audioSource = gameObject.AddComponent<AudioSource>();
-            m_sounds.m_audioSource.m_audioClip = m_sounds.m_audioClip;
+            m_sound.m_audioSource = gameObject.AddComponent<AudioSource>();
+            m_sound.m_audioSource.clip = m_sound.m_audioClip;
 
-            m_sounds.m_audioSource.volume = m_sounds.m_volume;        
+            m_sound.m_audioSource.volume = m_sound.m_volume;
+
+            Play("Siren");
         }
     }
+
     public void Play(string m_name)
         {
-            Sound m_newSound = Array.Find(m_sounds, m_sound => m_sound.name == m_name);
+            AudioClass m_newSound = Array.Find(m_sounds, m_sound => m_sound.m_audioName == m_name);
             m_newSound.m_audioSource.Play();
         }
 

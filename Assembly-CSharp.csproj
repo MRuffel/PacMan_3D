@@ -60,12 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Interactable\CollectableNodes.cs" />
+    <Compile Include="Assets\Scripts\Interactable\Collectables.cs" />
     <Compile Include="Assets\Scripts\Interactable\Portals.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Utilities\AudioClass.cs" />
     <Compile Include="Assets\Scripts\Utilities\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities\AudioSourceList.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity Project/PacMan_3D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
