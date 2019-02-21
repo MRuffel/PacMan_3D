@@ -14,7 +14,7 @@ public class CollectableNodes : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PlayerController.m_instance.m_score += m_points;
+            PlayerManager.m_instance.m_score += m_points;
             this.gameObject.SetActive(false);
         }
 
