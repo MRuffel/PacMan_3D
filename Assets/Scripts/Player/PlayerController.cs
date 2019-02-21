@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour
         
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
-            Debug.Log("in");
             m_force *= 0;
             m_speed *= 0;
         }
