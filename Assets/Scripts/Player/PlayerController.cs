@@ -68,21 +68,25 @@ public class PlayerController : MonoBehaviour
             m_playerTransform.localRotation = Quaternion.Euler(0,-90, 0);
             m_player.AddForce( new Vector3(0,0,1 * m_force) * m_force);
         }
+        else m_player.velocity = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.A))
         {
             m_playerTransform.localRotation = Quaternion.Euler(0, 180, 0);
-            m_player.AddForce(new Vector3(-1 * m_force,0,0) * m_force);
+            m_player.AddForce(new Vector3(-1 * m_force, 0, 0) * m_force);
         }
+        else m_player.velocity = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.S))
         {
             m_playerTransform.localRotation = Quaternion.Euler(0,90, 0);
             m_player.AddForce(new Vector3(0, 0,-1 * m_force) * m_force);
         }
+        else m_player.velocity = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.D))
         {
             m_playerTransform.localRotation = Quaternion.Euler(0,0, 0);
             m_player.AddForce(new Vector3(1 * m_force,0,0) * m_force);
         }
+        else m_player.velocity = new Vector3(0, 0, 0);
         /*switch (Input.GetKeyDown()) {
 
         case :
