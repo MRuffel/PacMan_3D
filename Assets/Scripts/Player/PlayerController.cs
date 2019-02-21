@@ -16,14 +16,13 @@ public class PlayerController : MonoBehaviour
 
 
     #endregion
+
     #region Control Variable
 
     [SerializeField]
     Rigidbody m_player;
-
-
     [SerializeField]
-    Transform m_playerTransform;
+    public Transform m_playerTransform;
 
     [SerializeField]
     float m_force;
