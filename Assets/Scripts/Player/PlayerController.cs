@@ -12,17 +12,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     int m_highScore;
 
+
+
+
     #endregion
     #region Control Variable
 
     [SerializeField]
     Rigidbody m_player;
 
+
+    [SerializeField]
+    Transform m_playerTransform;
+
     [SerializeField]
     float m_force;
 
-    float m_horizontalMovement;
-    float m_verticalMovement;
+  
     #endregion
 
     #region Singleton
@@ -56,14 +62,37 @@ public class PlayerController : MonoBehaviour
 
     void Control() {
 
-        m_horizontalMovement = Input.GetAxis("Horizontal");
-        m_verticalMovement = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(m_horizontalMovement, 0f, m_verticalMovement);
+        if (Input.GetKey(KeyCode.W)) {
+
+            m_playerTransform.localRotation = Quaternion.Euler(0,-90, 0);
+            m_player.AddForce( new Vector3(0,0,1 * m_force) * m_force);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            m_playerTransform.localRotation = Quaternion.Euler(0, 180, 0);
+            m_player.AddForce(new Vector3(-1 * m_force,0,0) * m_force);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            m_playerTransform.localRotation = Quaternion.Euler(0,90, 0);
+            m_player.AddForce(new Vector3(0, 0,-1 * m_force) * m_force);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            m_playerTransform.localRotation = Quaternion.Euler(0,0, 0);
+            m_player.AddForce(new Vector3(1 * m_force,0,0) * m_force);
+        }
+        /*switch (Input.GetKeyDown()) {
+
+        case :
+            m_playerTransform.localRotation = Quaternion.Euler(0, 180, 0);
+            m_player.AddForce(transform.forward * m_force);
+            break;
 
 
-        m_player.AddForce(movement * m_force * Time.deltaTime);
 
+    }*/
     }
 
 }
