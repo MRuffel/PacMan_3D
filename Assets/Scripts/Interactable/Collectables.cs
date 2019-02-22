@@ -28,6 +28,7 @@ public class Collectables : MonoBehaviour
             AudioManager.m_instance.Play(m_clipName);
             PlayerManager.m_instance.m_score += m_points;
             this.gameObject.SetActive(false);
+            
         }
 
         if(other.tag == m_tagName && m_specialActive) {
