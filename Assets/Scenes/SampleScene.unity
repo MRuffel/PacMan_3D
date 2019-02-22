@@ -219,7 +219,7 @@ MonoBehaviour:
   m_points: 10
   m_tagName: Player
   m_clipName: Wakka
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_points: 10
   m_tagName: Player
   m_clipName: Wakka
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!135 &442014384
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -804,9 +804,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_points: 0
-  m_tagName: 
-  m_clipName: 
-  m_activeSpecial: 0
+  m_tagName: Player
+  m_clipName: Wakka
+  m_specialActive: 1
 --- !u!135 &442948640
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1604,7 +1604,7 @@ MonoBehaviour:
   m_points: 10
   m_tagName: Player
   m_clipName: Wakka
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!1 &652864666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8966489283202850671, guid: f300c79d90505754fa355f928e89b591,
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_points: 20
   m_tagName: Player
   m_clipName: Eatingcherry
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!65 &663413281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2386,7 +2386,7 @@ MonoBehaviour:
   m_points: 10
   m_tagName: Player
   m_clipName: Wakka
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!135 &950522212
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2679,7 +2679,7 @@ MonoBehaviour:
   m_points: 10
   m_tagName: Player
   m_clipName: Wakka
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!135 &1187180014
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3161,7 +3161,7 @@ MonoBehaviour:
   m_points: 10
   m_tagName: Player
   m_clipName: Wakka
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!1 &1508479751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3830,7 +3830,7 @@ MonoBehaviour:
   m_points: 10
   m_tagName: Player
   m_clipName: Wakka
-  m_activeSpecial: 0
+  m_specialActive: 0
 --- !u!1 &1945348298
 GameObject:
   m_ObjectHideFlags: 0

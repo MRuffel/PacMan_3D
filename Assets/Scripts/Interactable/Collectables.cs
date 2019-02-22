@@ -33,7 +33,7 @@ public class Collectables : MonoBehaviour
         if(other.tag == m_tagName && m_specialActive) {
 
             //Active the blue mode of the ghost
-            //debug.log("in");
+            Debug.Log("in");
         }
 
     }
