@@ -7,9 +7,16 @@ public class Ghost : MonoBehaviour
 {
     #region Variable
 
+    GameObject[] m_ghosts;
+
     [SerializeField]
     bool m_inkyAndClyde;
 
+    Transform m_ghostSetPos;
+
+    [SerializeField]
+    public Transform m_resetPosition;
+    
     [SerializeField]
     Transform m_ghostTarget;
 
@@ -18,10 +25,15 @@ public class Ghost : MonoBehaviour
     NavMeshAgent m_ghost;
     #endregion
 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        m_ghost = GetComponent<NavMeshAgent>();
+        m_ghosts = GhostsList.m_instance.m_ghosts;
+        m_ghostSetPos = GetComponent<Transform>();
+         m_ghost = GetComponent<NavMeshAgent>();
         
     }
 
@@ -45,20 +57,37 @@ public class Ghost : MonoBehaviour
 
     void TrackingWithNodes() {
 
-        Vector3 m_destination = PlayerController.m_instance.m_ghostTarget;
-        //Vector3 m_newVector = new Vector3(m_destination.position.x, 0, m_destination.position.z);
-
+        Vector3 m_destination = PlayerController.m_instance.m_ghostTarget; //Vector from the point of impact of the node      
         Vector3 m_ghostPosition = new Vector3(m_ghost.transform.localPosition.x, 0, m_ghost.transform.localPosition.y);
 
-        Debug.Log(m_destination + "1");
-        Debug.Log(m_ghostPosition + "2");
         if (m_ghostPosition == m_destination)
         {
-            Debug.Log("in");
-            // Debug.Log(m_ghost.transform.localPosition);
-            //Debug.Log(m_newVector);
             m_ghost.SetDestination(m_newDestination);
         }
         else{m_ghost.SetDestination(m_destination);}
     }
+    
+    public void ResetGhostPosition() {
+
+        
+        for (int i = 0; i < m_ghosts.Length; i++){
+            Vector3 m_temp = new Vector3(m_resetPosition.transform.position.x, m_resetPosition.transform.position.y, m_resetPosition.transform.position.z);
+            m_ghostSetPos.transform.SetPositionAndRotation(m_temp, Quaternion.Euler(0, 0, 0));
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        
+        if (other.tag == "Player")
+        {
+            PlayerManager.m_instance.GetHit();
+            ResetGhostPosition();
+
+        }
+
+
+    }
+
 }
