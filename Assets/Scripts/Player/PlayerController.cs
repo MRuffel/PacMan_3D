@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
      public Vector3 m_ghostTarget;
 
+    [SerializeField]
+     public Transform m_playerSetPos;
+
     #region Control Variable
 
     [SerializeField]
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
      private void Start()
     {
+       
         m_initialForce = m_force;
         m_initialSpeed = m_speed;
 
@@ -127,12 +131,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //Note transfere le contact au node pour creer linfo du contact
 
     private void OnTriggerEnter(Collider other){
         if (other.tag == "Node") {
-            Transform m_transform = other.transform.GetComponent<Transform>();
+            Transform m_transform = other.transform.GetComponent<Transform>(); //Transform of the poin of impact
             m_ghostTarget = new Vector3 (m_transform.position.x,0,m_transform.position.z);
 
         }
+
+     
     }
 }
